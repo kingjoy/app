@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    json (2.6.3)
     rack (3.0.4.2)
     rackup (2.1.0)
       rack (>= 3)
@@ -11,6 +12,7 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  json
   rack
   rackup
 
