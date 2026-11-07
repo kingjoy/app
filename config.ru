@@ -3,11 +3,24 @@ require 'json'
 class Application
   def call(env)
     req = Rack::Request.new(env)
+
+    return not_found unless req.path == '/'
+
     p JSON.parse( req.body.read )
     [
       200,
       { "content-type" => "application/json" },
       ['{ "status": "OK" }']
+    ]
+  end
+
+  private
+
+  def not_found
+    [
+      404,
+      { "content-type" => "application/json" },
+      ['{ "status": "Not Found" }']
     ]
   end
 end
